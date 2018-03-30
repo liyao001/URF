@@ -27,6 +27,7 @@ pip install URF
 
 ```python
 from sklearn.datasets import load_iris
+from URF.main import random_forest_cluster, plot_cluster_result
 iris = load_iris()
 X = iris.data
 y = iris.target
