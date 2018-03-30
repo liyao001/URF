@@ -1,4 +1,4 @@
-from URF.URF import random_forest_cluster, plot_cluster_result
+from URF.main import random_forest_cluster, plot_cluster_result
 from sklearn.datasets import load_iris
 iris = load_iris()
 X = iris.data
