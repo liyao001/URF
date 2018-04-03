@@ -114,7 +114,7 @@ def map_label_with_marker(labels):
     return dict(zip(list(set(labels)), markers))
 
 
-def plot_cluster_result(prox_mat, cluster_ids, n_components=2, marker=None, output=None, show_legend=True, **kwargs):
+def plot_cluster_result(prox_mat, cluster_ids, n_components=2, marker=None, output=None, show_legend=True, pre_computed_sim=True, **kwargs):
     """
     Plot cluster result
     :param prox_mat:
@@ -126,7 +126,10 @@ def plot_cluster_result(prox_mat, cluster_ids, n_components=2, marker=None, outp
     :param kwargs:
     :return:
     """
-    mds = MDS(n_components=n_components, **kwargs)
+    if pre_computed_sim:
+        mds = MDS(n_components=n_components, dissimilarity="precomputed", **kwargs)
+    else:
+        mds = MDS(n_components=n_components, dissimilarity="euclidean", **kwargs)
     x_transformed = mds.fit_transform(prox_mat)
     plt.figure()
     if marker is not None:
