@@ -131,9 +131,9 @@ def plot_cluster_result(prox_mat, cluster_ids, n_components=2, marker=None, outp
     plt.figure()
     if marker is not None:
         markers = map_label_with_marker(cluster_ids)
-        color_set = []
-        for i in range(len(list(set(marker)))):
-            color_set.append("C%d" % i)
+        color_set = {}
+        for k, v in enumerate(list(set(marker))):
+            color_set[v] = "C%d" % k
         for i in list(set(marker)):
             for j in list(set(cluster_ids)):
                 indecies = np.logical_and(cluster_ids == i, marker == j)
