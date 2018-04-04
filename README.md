@@ -41,7 +41,7 @@ If you encountered an error like
 
 > QXcbConnection: Could not connect to display
 
-then you need to add these codes to the very begining of your file:
+then you need to add these codes to the very beginning of your file:
 
 ```python
 import matplotlib as mpl
@@ -52,4 +52,3 @@ and you must assign the output file when you call `plot_cluster_result`, like th
 ```python
 plot_cluster_result(prox_mat, cluster_ids, 2, y, output="test_123.png")
 ```
-

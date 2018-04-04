@@ -139,7 +139,7 @@ def plot_cluster_result(prox_mat, cluster_ids, n_components=2, marker=None, outp
             color_set[v] = "C%d" % k
         for i in list(set(marker)):
             for j in list(set(cluster_ids)):
-                indecies = np.logical_and(cluster_ids == i, marker == j)
+                indecies = np.logical_and(cluster_ids == j, marker == i)
                 plt.scatter(x_transformed[indecies, 0], x_transformed[indecies, 1],
                             c=color_set[i], marker=markers[j], label="Y: "+str(i)+"-C: "+str(j))
     else:

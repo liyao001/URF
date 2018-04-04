@@ -35,3 +35,16 @@ Usage
 
   clf, prox_mat, cluster_ids = random_forest_cluster(X, k=3, max_depth=20, random_state=0)
   plot_cluster_result(prox_mat, cluster_ids, 2, y)
+
+If you encountered an error like
+
+  > QXcbConnection: Could not connect to display
+
+then you need to add these codes to the very beginning of your file::
+
+  import matplotlib as mpl
+  mpl.use("Agg")
+
+and you must assign the output file when you call `plot_cluster_result`, like this::
+
+  plot_cluster_result(prox_mat, cluster_ids, 2, y, output="test_123.png")
