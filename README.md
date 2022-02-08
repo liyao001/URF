@@ -6,7 +6,9 @@ URF (Unsupervised Random Forest, or Random Forest Clustering) is a python implem
 ## Installation
 
 ```shell
-pip install URF
+git clone https://github.com/mtanghu/URF.git
+cd URF
+pip install .
 ```
 
 ## Usage
