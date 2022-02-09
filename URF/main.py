@@ -97,7 +97,7 @@ def random_forest_cluster(X, k=2, dissimilarity=True, **kwargs):
 
     if dissimilarity:
         prox_mat = 1 - prox_mat
-    cluster_ids, error, n_found = KMeans(n_clusters=k, random_state=kwargs.get("random_state")).fit_predict(X)
+    cluster_ids = KMeans(n_clusters=k, random_state=kwargs.get("random_state")).fit_predict(prox_mat)
 
     return clf, prox_mat, cluster_ids
 
