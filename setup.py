@@ -29,6 +29,7 @@ setup(
     install_requires=['scikit-learn>=0.17', 'numpy>=1.9.0', 'scipy', 'pycluster'],
     url='https://github.com/liyao001/URF',
     packages=["URF", ],
+    install_requires=["scikit-learn", ],
     license='Apache 2.0',
     author='Li Yao',
     author_email='yaol17@mails.tsinghua.edu.cn',
