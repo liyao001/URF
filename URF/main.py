@@ -7,7 +7,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.manifold import MDS
 import matplotlib.pyplot as plt
-from Pycluster import kcluster
+from sklearn.cluster import KMeans
 
 
 def build_synthetic_matrix(X):
@@ -97,7 +97,7 @@ def random_forest_cluster(X, k=2, dissimilarity=True, **kwargs):
 
     if dissimilarity:
         prox_mat = 1 - prox_mat
-    cluster_ids, error, n_found = kcluster(prox_mat, nclusters=k, method="m")
+    cluster_ids = KMeans(n_clusters=k, random_state=kwargs.get("random_state")).fit_predict(prox_mat)
 
     return clf, prox_mat, cluster_ids
 
